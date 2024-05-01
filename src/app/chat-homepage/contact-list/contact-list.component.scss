@@ -21,6 +21,18 @@
       color: $text-dark;
       border: none;
     }
+
+    button {
+      // width: 100%;
+      min-width: 100px;
+      max-width: 250px;
+      height: 50px;
+      font-size: $base-font-size;
+      background-color: $gray-primary;
+      border-radius: $border-radius;
+      color: $primary-border-color;
+      border: none;
+    }
   }
 
   mat-list-option {

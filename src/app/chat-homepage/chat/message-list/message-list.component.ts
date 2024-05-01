@@ -42,6 +42,7 @@ export class MessageListComponent implements OnInit, OnDestroy {
     this.loadLocalMessages();
 
     this.chatsService.currentChat$.subscribe(result => {
+      console.log("prev chat result", result);
       result.messages.map((message: Message) => {
         //decrypt mesages only if user is a receiver
         if (this.currentUser.email !== message.sender) {
@@ -50,6 +51,7 @@ export class MessageListComponent implements OnInit, OnDestroy {
           this.chatsService.deleteMessage(result.chatId, message);
         }
       });
+      console.log("new chat result", result);
     }, error => {
       console.log(error);
     });
@@ -69,6 +71,7 @@ export class MessageListComponent implements OnInit, OnDestroy {
   }
 
   async decryptMessage(message: Message) {
+    console.log("decrypting message: " + JSON.stringify(message));
     //cheks if message is already decrypted
     const exists = this.messages.some((_message: Message) => message.createdAt === _message.createdAt);
 

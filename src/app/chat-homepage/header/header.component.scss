@@ -27,6 +27,20 @@
         margin-top: 20px;
       }
     }
+
+    button {
+      // width: 100%;
+      min-width: 100px;
+      max-width: 250px;
+      height: 50px;
+      font-size: $base-font-size;
+      background-color: $gray-primary;
+      border-radius: $border-radius;
+      color: $primary-border-color;
+      border: none;
+    }
+
+
   }
   .header-right {
     max-width: 880px;

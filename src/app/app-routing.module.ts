@@ -14,7 +14,8 @@ const routes: Routes = [
     path: '',
     component: AuthComponent,
     children: [
-      { path: '', component: ChooseSiginMethodComponent },
+      // { path: '', component: ChooseSiginMethodComponent },
+      { path: '', redirectTo: 'signin', pathMatch: 'full'},
       { path: 'signin', component: SigninEmailPasswordComponent },
       { path: 'signin/create-account', component: CreateAccountComponent },
     ],
